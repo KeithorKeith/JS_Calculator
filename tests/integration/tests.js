@@ -42,5 +42,21 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('6')
   })
 
+  it('should output a positive number', function(){
+    element(by.css('#number5')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('11')
+  })
+
+  it('should output a negative number', function(){
+    element(by.css('#number5')).click();
+    element(by.css('#operator_subtract')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('-1')
+  })
+
 
 });
