@@ -78,4 +78,12 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('6561')
   })
 
+  it('should not be able to divide by 0 instead outputting Error', function(){
+    element(by.css('#number1')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('Error')
+  })
+
 });
