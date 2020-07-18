@@ -35,4 +35,32 @@ describe('calculator', function () {
     assert.equal(3, calculator.runningTotal)
   })
 
+  it('it can concatinate miltiple operations together', function(){
+    calculator.numberClick(8);
+    calculator.numberClick(9);
+    assert.equal(89, calculator.runningTotal)
+  })
+
+  it('it can chain multiple operations together', function(){
+    calculator.numberClick(8);
+    calculator.operatorClick("+");
+    calculator.numberClick(9);
+    calculator.operatorClick("-");
+    calculator.numberClick(2);
+    calculator.operatorClick("=");
+    assert.equal(15, calculator.runningTotal)
+  })
+
+  it('It can clear the running total without affecting the calculation', function(){
+    calculator.numberClick(8);
+    calculator.operatorClick("+");
+    calculator.numberClick(3);
+    calculator.clearClick();
+    calculator.numberClick(9);
+    calculator.operatorClick("-");
+    calculator.numberClick(2);
+    calculator.operatorClick("=");
+    assert.equal(15, calculator.runningTotal)
+  })
+
 });
