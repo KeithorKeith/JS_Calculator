@@ -17,9 +17,21 @@ describe('calculator', function () {
     assert.equal(5, calculator.runningTotal)  
   })
 
-  it('it can subtract numbers', function(){
+  it('it can subtract one number from another', function(){
     calculator.previousTotal = 7;
     calculator.subtract(4)
+    assert.equal(3, calculator.runningTotal)
+  })
+
+  it('it can multiply two numbers together', function(){
+    calculator.previousTotal = 3;
+    calculator.multiply(5)
+    assert.equal(15, calculator.runningTotal)
+  })
+
+  it('it can divide one number from another', function(){
+    calculator.previousTotal = 21
+    calculator.divide(7)
     assert.equal(3, calculator.runningTotal)
   })
 
