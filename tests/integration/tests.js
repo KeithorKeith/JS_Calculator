@@ -74,8 +74,16 @@ describe('calculator functionality', function() {
     element(by.css('#number9')).click();
     element(by.css('#operator_multiply')).click();
     element(by.css('#number9')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number9')).click();
     element(by.css('#operator_equals')).click();
-    expect(running_total.getAttribute('value')).to.eventually.equal('6561')
+    expect(running_total.getAttribute('value')).to.eventually.equal('43046721')
   })
 
   it('should not be able to divide by 0 instead outputting Error', function(){
